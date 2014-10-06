@@ -15,12 +15,12 @@ body {
 
 input[type="text"],input[type="password"],input[type="submit"]
 {
-    font-size:22px;
+    font-size:18px;
 }
 
 #signInDiv {
 	float:left;
-	width:500px;
+	width:450px;
 }
 
 #signUpTable {
@@ -30,7 +30,7 @@ input[type="text"],input[type="password"],input[type="submit"]
 #signUpDiv {
 	text-align:right;
 	float:right;
-	width:450px;
+	width:500px;
 	border-left: 3px solid #CCC;
 }
 
@@ -50,12 +50,12 @@ input[type="text"],input[type="password"],input[type="submit"]
 }
 
 .mainContent, #menuMenu {
-	width:1000px;
+	width:960px;
 	margin:0 auto;
 }
 
 #footerContent {
-	width:1000px;
+	width:960px;
 	margin:10px auto;
 }
 
@@ -136,7 +136,7 @@ h2 a:hover, #footerContent a:hover {
 
 
 #signIn {
-	height:950px;
+	height:775px;
 	color:#333333;
 	margin-top:10px;
 }
@@ -169,8 +169,8 @@ h2 a:hover, #footerContent a:hover {
 	-webkit-transform-style: preserve-3d;
 	transform: rotateY(180deg);
 	transform-style: preserve-3d;
-    -webkit-filter: invert(60%);
-    filter: invert(60%);
+    -webkit-filter: invert(70%);
+    filter: invert(70%);
 }
 #menuLogo .image, #menuLogo:hover .image {
 	-webkit-transition: all 0.7s ease;

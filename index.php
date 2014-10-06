@@ -39,8 +39,8 @@
 			
 			
 			<div id="signInDiv">
-				<h1><font size="20">Sign In</font></h1>
-				<br>
+				<h1><font size="6pt">Sign In</font></h1>
+				
 				<form name="signInForm" action="index.php#signIn" method="post">
 					<table id="signInTable">
 						<tr>
@@ -67,8 +67,8 @@
 				</form>
 			</div>
 			<div id="signUpDiv">
-				<h1><font size="20">Sign Up</font></h1>
-				<br>
+				<h2><font size="6pt">Sign Up</font></h2>
+				
 				<form name="signUpForm" action="index.php#signIn" method="post">
 					<table id="signUpTable">
 						<tr>
