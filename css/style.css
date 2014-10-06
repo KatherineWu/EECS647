@@ -20,7 +20,7 @@ input[type="text"],input[type="password"],input[type="submit"]
 
 #signInDiv {
 	float:left;
-	width:500px;
+	width:450px;
 }
 
 #signUpTable {
@@ -30,7 +30,7 @@ input[type="text"],input[type="password"],input[type="submit"]
 #signUpDiv {
 	text-align:right;
 	float:right;
-	width:450px;
+	width:500px;
 	border-left: 3px solid #CCC;
 }
 
