@@ -50,12 +50,12 @@ input[type="text"],input[type="password"],input[type="submit"]
 }
 
 .mainContent, #menuMenu {
-	width:1000px;
+	width:960px;
 	margin:0 auto;
 }
 
 #footerContent {
-	width:1000px;
+	width:960px;
 	margin:10px auto;
 }
 
