@@ -1,14 +1,17 @@
 <?php
 
-	$target = "../db_access.conf";
+	$target = "./db_access.config";
 	if (!file_exists($target)) {
-	   echo "Cannot find db_access.conf";
+	   echo "Cannot find db_access.config";
 	   exit;
 	}
 
-	$DBinfo = fopen($target, "r") or die("Unable to open db_access.conf");
+	$file_contents = file_get_contents("./db_access.config");
+	$rows = explode(',', $file_contents);
 
-		
-
-	fclose($DBinfo);
+	$c = mysqli_connect(preg_replace('/\s+/','',$rows[0]), preg_replace('/\s+/','',$rows[1]), preg_replace('/\s+/','',$rows[2]), preg_replace('/\s+/','',$rows[3]));
+	if (mysqli_connect_errno($c)) {
+	   echo "Failed to connect to MySQL" . mysqli_connect_error();
+	   exit;
+	}
 ?>

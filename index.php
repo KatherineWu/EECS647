@@ -4,6 +4,7 @@
 <meta name="description" content="rofl. Get tickets to win items for sale.">
 <meta name="keywords" content="rofl, raffle, tickets, sale, buy, purchase, woot, meh">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<?php include("php_includes/db_access.php"); ?>
 <?php include("php_includes/menu_bar.php"); ?>
 <?php include("php_includes/header.php"); ?>
 <title>rofl.</title>
