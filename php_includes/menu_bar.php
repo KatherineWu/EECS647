@@ -12,6 +12,11 @@
 			<a href="index.php"><img src="./img/logo.png" id="logoImg" class="image" alt="rofl."></a>
 		</div>
 		<ul id="ulMenu">
+		<?php 
+		      if (isset($_SESSION['user'])) {
+      		      	 echo "<li><a href=\"php_includes/signout.php\">Sign Out</a></li>";
+		      }
+		?>
 			<li>
 				<a href="index.php#signIn"> <?php echo $account; ?> </a>
 			</li>
@@ -28,8 +33,4 @@
 	</div>
 	
 </div>
-<?php 
-      if (isset($_SESSION['user'])) {
-      	 echo "<a href=\"php_includes/signout.php\" style=\"font-size:12pt;\">Sign Out</a>";
-      }
-?> 
+ 
