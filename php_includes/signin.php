@@ -5,7 +5,7 @@
 		<table id="signInTable">
 		<tr>
 			<td colspan="2">
-				<input type="text" name="signInEmail" placeholder="Email">
+				<input type="text" name="signInEmail" placeholder="Email" value="<?php echo htmlspecialchars($loginEmail); ?>">
 			</td>
 		</tr>
 		<tr>
