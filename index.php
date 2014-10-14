@@ -4,9 +4,12 @@
 <meta name="description" content="rofl. Get tickets to win items for sale.">
 <meta name="keywords" content="rofl, raffle, tickets, sale, buy, purchase, woot, meh">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<?php session_start(); ?>
 <?php include("php_includes/db_access.php"); ?>
 <?php include("php_includes/menu_bar.php"); ?>
 <?php include("php_includes/header.php"); ?>
+
 <title>rofl.</title>
 </head>
 <body>
@@ -36,130 +39,16 @@
 	</div>
 	<div id="signInWrapper" class="mainWrapper">
 		<section id="signIn" class="mainContent">
-			<br><br><br><br><br>
+			<br><br><br><br><br><br>
 			
-			
-			<div id="signInDiv">
-				<h1><font size="6pt">Sign In</font></h1>
-				
-				<form name="signInForm" action="index.php#signIn" method="post">
-					<table id="signInTable">
-						<tr>
-							<td>
-								<input type="text" name="signInEmail" placeholder="Email">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="password" name="signInPassword" placeholder="Password">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="submit" name="signInSubmit" value="Sign In">
-							</td>
-						</tr>
-					</table>
-				</form>
-			</div>
-			<div id="signUpDiv">
-				<h2><font size="6pt">Sign Up</font></h2>
-				
-				<form name="signUpForm" action="index.php#signIn" method="post">
-					<table id="signUpTable">
-						<tr>
-							<td>
-								<input type="text" name="signUpEmail" placeholder="Email">
-							</td>
-						</tr>
-							<tr>
-							<td>
-								<input type="password" name="signUpPassword" placeholder="Password">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="creditDebit" placeholder="Credit/Debit">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="creditDebitExp" placeholder="Expiration Date">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="billingAddress" placeholder="Billing Address">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="billingZip" placeholder="Billing Zip">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="billingCity" placeholder="Billing City">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="billingState" placeholder="Billing State">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="shippingAddress" placeholder="Shipping Address">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="shippingZip" placeholder="Shipping Zip">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="shippingCity" placeholder="Shipping City">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="shippingState" placeholder="Shipping State">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="phone" placeholder="Phone Number">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br>
-							</td>
-						</tr>						
-						<tr>
-							<td>
-								<input type="submit" name="signUpSubmit" value="Sign Up">
-							</td>
-						</tr>
-					</table>
-				</form>
-			</div>
+			<?php 
+			   if(!isset($_SESSION['user'])) {
+			     include("php_includes/signin.php");
+			   }
+			   else {
+			     include("php_includes/account_settings.php");
+			   }
+			     ?>
 		</section>
 	</div>
 <?php include("php_includes/footer.php"); ?>

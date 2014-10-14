@@ -28,3 +28,14 @@ $(function() {
 	}
     });
 });
+
+function SHSignUp(button) {
+    $(".signUpHdn").toggle(500);
+    $(".buttonToggle").toggle();
+    if ($("#signUpSubmit").is(":visible")) {
+    	button.value = "Sign In";
+    }
+    else {
+	button.value = "Sign Up";
+    }
+}
