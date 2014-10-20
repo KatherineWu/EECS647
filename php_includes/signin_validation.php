@@ -7,9 +7,9 @@
 	      $loginEmail = mysqli_real_escape_string($c, $_POST['signInEmail']);
 	      $loginPW = mysqli_real_escape_string($c, $_POST['signInPassword']);
 
-	      $loginQuery = "SELECT email
-	      		    	FROM USER
-				WHERE email='".$loginEmail."'
+	      $loginQuery = "SELECT user_email
+	      		    	FROM `ROFL.USERS`
+				WHERE user_email='".$loginEmail."'
 				      AND password='".$loginPW."'";
 
 	      $result = mysqli_query($c, $loginQuery);

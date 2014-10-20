@@ -54,15 +54,35 @@
 	      }
  
 	      if ($error == false) {
-	      	 $signupQuery = "INSERT INTO USER
-		 	      		( email,
-					  password,
-					  first_name,
-					  last_name )
+	      	 $signupQuery = "INSERT INTO `csoden42`.`ROFL.USERS` 
+		 	      		(`user_email`, 
+					 `password`, 
+					 `user_address_street`, 
+					 `user_address_city`, 
+					 `user_address_state`, 
+					 `billing_card_number`, 
+					 `billing_card_exp_date`, 
+					 `user_billing_address_street`, 
+					 `user_billing_address_city`, 
+					 `user_billing_address_state`, 
+					 `user_phone`, 
+					 `first_name`, 
+					 `last_name`
+					 )
 				 VALUES ( '".$loginEmail."',
 				 	  '".$loginPW."',
+					  NULL, 
+					  NULL, 
+					  NULL, 
+					  NULL, 
+					  NULL, 
+					  NULL, 
+					  NULL, 
+					  NULL, 
+					  NULL,
 					  '".$loginFname."',
-					  '".$loginLname."' )";
+					  '".$loginLname."'
+					  )";
 
 		if (!mysqli_query($c, $signupQuery)) {
 		  echo "Failed to insert user.";

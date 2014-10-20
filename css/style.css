@@ -148,7 +148,7 @@ h2 a:hover, #footerContent a:hover {
     min-height:550px;
     color:#333333;
     margin-top:10px;
-    padding-bottom:30px;
+    padding-bottom:40px;
 }
 
 #aboutUs {
@@ -160,6 +160,10 @@ h2 a:hover, #footerContent a:hover {
     height:200px;
     background-image: url('../img/backPanel.png');
     color:#FFFFFF;
+}
+
+.signupError {
+    color:#2DC6FF;
 }
 
 #logoImg, #menuLogo {
