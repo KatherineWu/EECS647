@@ -39,3 +39,8 @@ function SHSignUp(button) {
 	button.value = "Sign Up";
     }
 }
+
+function screenheight() {
+    $("#buyItem").height(screen.height);
+    $("#buyTicket").height(screen.height);
+}

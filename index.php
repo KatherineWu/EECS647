@@ -18,8 +18,8 @@
 			<br><br><br><br><br>
 			<div id="itemImg" class="img">item photo</div>
 			<div id="itemDescr"><?php echo "item description" ?></div>
-			<input type="button" id="buyItemButton" name="buyItemButton" value="Buy Item">
-			<input type="button" id="buyTicketButton" name="buyTicketButton" value="Buy Tickets">
+			<input type="button" id="buyItemButton" name="buyItemButton" value="Buy Item" onclick="location.href='buyThings.php#buyItem';">
+			<input type="button" id="buyTicketButton" name="buyTicketButton" value="Buy Tickets" onclick="location.href='buyThings.php#buyTicket';">
 		</section>
 	</div>
 	<div id="aboutUsWrapper" class="mainWrapper vertical-slide">
