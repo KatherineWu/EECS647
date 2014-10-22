@@ -13,7 +13,7 @@ body {
     overflow-x:hidden;
 }
 
-#signInDiv input[type="text"], #signInDiv input[type="password"], #signInDiv input[type="submit"], #signInDiv input[type="button"]
+#signInDiv input[type="text"], #signInDiv input[type="password"], #signInDiv input[type="submit"], #signInDiv input[type="button"], #itemSpace input[type="button"]
 {
     font-size:24px;
 }
@@ -36,6 +36,25 @@ body {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     color:#FFFFFF;
+}
+
+#itemImg {
+    float:left;
+    width:450px;
+    min-height:450px;
+    margin-top:4em;
+}
+
+#itemDescr {
+    float:right;
+    width:450px;
+    min-height:200px;
+    margin-top:6em;
+}
+
+#itemSpace input[type="button"] {
+    float:right;
+    margin-left:1em;
 }
 
 #signInDiv {
@@ -135,8 +154,7 @@ h2 a:hover, #footerContent a:hover {
 }
 
 #itemSpace {
-    height:800px;
-    
+    min-height:800px;
 }
 #winningNum {
     height:400px;

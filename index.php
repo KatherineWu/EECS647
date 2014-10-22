@@ -16,7 +16,10 @@
 	<div id="itemSpaceWrapper" class="mainWrapper">
 		<section id="itemSpace" class="mainContent">
 			<br><br><br><br><br>
-			item.
+			<div id="itemImg" class="img">item photo</div>
+			<div id="itemDescr"><?php echo "item description" ?></div>
+			<input type="button" id="buyItemButton" name="buyItemButton" value="Buy Item">
+			<input type="button" id="buyTicketButton" name="buyTicketButton" value="Buy Tickets">
 		</section>
 	</div>
 	<div id="aboutUsWrapper" class="mainWrapper vertical-slide">
