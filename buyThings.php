@@ -20,11 +20,12 @@
 	     <section id="buyItem" class="mainContent">
 	     	      <br><br><br><br><br>
 		      <div id="buyItemBody" class="buyContent">
+			<h2><?php echo $buyItemResult->item_name; ?> ($<?php echo $buyItemResult->item_cost; ?>)</h2>
 			<div class="itemImg">
 			  <img src="<?php echo $pathToItemPic; ?>">
 			</div>
 		        <div class="itemDescr">
-			  
+			  <?php echo $buyItemResult->item_description; ?>
 			</div>
 			<input type="button" id="buyItemBtn" name="buyItemBtn" value="Buy Item!" onclick="loadBuyItem()">
 	              </div>

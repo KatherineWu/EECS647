@@ -20,22 +20,27 @@
 			<br><br><br><br><br>
 
 			<div class="img itemImg"><img src="<?php echo $pathToItemPic; ?>"></div>
-			<div class="itemDescr"><?php echo "item description" ?></div>
-			<input type="button" id="buyItemButton" name="buyItemButton" value="Buy Item" <?php 			   
+			<div class="itemDescr">
+			  <h2><?php echo $buyItemResult->item_name; ?></h2>
+			  <?php echo $buyItemResult->item_description; ?><br><br>
+			  Tickets: <b>$<?php echo $buyItemResult->cost_of_ticket; ?></b> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Sale Price: <b>$<?php echo $buyItemResult->item_cost; ?></b>
+			</div>
+			<a <?php 			   
 														if(!isset($_SESSION['user'])) {
-				echo "onclick=\"scrolltoSI();\"";
+				echo "href=\"index.php#signIn\"";
 			   }
 			   else {
-				echo "onclick=\"location.href='buyThings.php#buyItem';\"";
-			   }											?>>
-			<input type="button" id="buyTicketButton" name="buyTicketButton" value="Buy Tickets" <?php 			   
+				echo "href=\"buyThings.php#buyItem\"";
+			   }
+														?> class="linkButton" id="buyItemButton">Buy Item</a>
+			<a <?php 			   
 														if(!isset($_SESSION['user'])) {
-				echo "onclick=\"scrolltoSI();\"";
+				echo "href=\"index.php#signIn\"";
 			   }
 			   else {
-				echo "onclick=\"location.href='buyThings.php#buyTicket';\"";
+				echo "href=\"buyThings.php#buyTicket\"";
 			   }
-														?>>
+														?> class="linkButton" id="buyTicketButton">Buy Tickets</a>
 		</section>
 	</div>
 	<div id="aboutUsWrapper" class="mainWrapper vertical-slide">

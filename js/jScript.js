@@ -55,12 +55,6 @@ function buyLocation(sess, button) {
     }
 }
 
-function scrolltoSI() {
-    $('html,body').animate({
-	scrollTop: $("#signIn").offset().top
-    }, 1000);
-}
-
 function loadBuyItem() {
     $("#buyItemBody").load("./php_includes/buyItemInfo.php");
 }
