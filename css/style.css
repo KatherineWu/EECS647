@@ -13,7 +13,7 @@ body {
     overflow-x:hidden;
 }
 
-#signInDiv input[type="text"], #signInDiv input[type="password"], #signInDiv input[type="submit"], #signInDiv input[type="button"], #itemSpace input[type="button"]
+input[type="text"], input[type="password"], input[type="submit"], input[type="button"]
 {
     font-size:24px;
 }
@@ -38,14 +38,14 @@ body {
     color:#FFFFFF;
 }
 
-#itemImg {
+.itemImg {
     float:left;
     width:450px;
-    min-height:450px;
+    min-height:300px;
     margin-top:4em;
 }
 
-#itemDescr {
+.itemDescr {
     float:right;
     width:450px;
     min-height:200px;
@@ -77,7 +77,7 @@ body {
     background:rgba(255,255,255,.5);
 }
 
-.mainContent, #menuMenu {
+.mainContent, #menuMenu, #buyMenuMenu {
     width:960px;
     margin:0 auto;
 }
@@ -133,7 +133,7 @@ h2 a, #footerContent a {
     transition:         color .7s;
 }
 
-h2 a:hover, #footerContent a:hover {
+h2 a:hover, #footerContent a:hover, #buyMenuMenu a:hover {
     color:#2DC6FF;
 }
 
@@ -173,6 +173,14 @@ h2 a:hover, #footerContent a:hover {
     height:400px;
 }
 
+.buyContent {
+    float:right;
+    width:600px;
+    height:500px;
+    z-index:200;
+    margin-top:150px;
+}
+
 #buyItemWrapper {
     background:#FFFFFF;
 }
@@ -180,6 +188,29 @@ h2 a:hover, #footerContent a:hover {
 #buyTicketWrapper {
     background:#FFFFFF;
 }
+
+#buyMenu {
+    position:fixed;
+    width:100%;
+    height:0;
+    font-size:24px;
+}
+
+#buyMenuMenu ul {
+    list-style-type:none;
+}
+
+#buyMenu a {
+    text-decoration:none;
+    color:#000000;
+    -webkit-transition: color .7s;
+    -moz-transition:    color .7s;
+    -ms-transition:     color .7s;
+    -o-transition:      color .7s;
+    transition:         color .7s;
+}
+
+
 
 #footer {
     width:100%;
@@ -201,6 +232,7 @@ h2 a:hover, #footerContent a:hover {
 }
 
 #buyMenuLogo {
+    z-index:10000;
     margin:0;
     padding:0;
     top:0;
@@ -223,7 +255,11 @@ h2 a:hover, #footerContent a:hover {
     margin-left:-1em;
 }
 
-#menuLogo:hover .image{
+#buyMenuLogo:hover .image {
+    -webkit-filter: invert(70%);
+}
+
+#menuLogo:hover .image {
     -webkit-transform: rotateY(180deg);
     -webkit-transform-style: preserve-3d;
     transform: rotateY(180deg);
@@ -231,7 +267,7 @@ h2 a:hover, #footerContent a:hover {
     -webkit-filter: invert(70%);
     filter: invert(70%);
 }
-#menuLogo .image, #menuLogo:hover .image {
+#buyMenuLogo .image, #menuLogo .image, #menuLogo:hover .image {
     -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;
 }

@@ -9,6 +9,8 @@
 <?php include("php_includes/db_access.php"); ?>
 <?php include("php_includes/menu_bar.php"); ?>
 <?php include("php_includes/header.php"); ?>
+<?php include("php_includes/get_item.php"); ?>
+
 
 <title>rofl.</title>
 </head>
@@ -16,10 +18,24 @@
 	<div id="itemSpaceWrapper" class="mainWrapper">
 		<section id="itemSpace" class="mainContent">
 			<br><br><br><br><br>
-			<div id="itemImg" class="img">item photo</div>
-			<div id="itemDescr"><?php echo "item description" ?></div>
-			<input type="button" id="buyItemButton" name="buyItemButton" value="Buy Item" onclick="location.href='buyThings.php#buyItem';">
-			<input type="button" id="buyTicketButton" name="buyTicketButton" value="Buy Tickets" onclick="location.href='buyThings.php#buyTicket';">
+
+			<div class="img itemImg"><img src="<?php echo $pathToItemPic; ?>"></div>
+			<div class="itemDescr"><?php echo "item description" ?></div>
+			<input type="button" id="buyItemButton" name="buyItemButton" value="Buy Item" <?php 			   
+														if(!isset($_SESSION['user'])) {
+				echo "onclick=\"scrolltoSI();\"";
+			   }
+			   else {
+				echo "onclick=\"location.href='buyThings.php#buyItem';\"";
+			   }											?>>
+			<input type="button" id="buyTicketButton" name="buyTicketButton" value="Buy Tickets" <?php 			   
+														if(!isset($_SESSION['user'])) {
+				echo "onclick=\"scrolltoSI();\"";
+			   }
+			   else {
+				echo "onclick=\"location.href='buyThings.php#buyTicket';\"";
+			   }
+														?>>
 		</section>
 	</div>
 	<div id="aboutUsWrapper" class="mainWrapper vertical-slide">
@@ -51,7 +67,7 @@
 			   else {
 			     include("php_includes/account_settings.php");
 			   }
-			     ?>
+			?>
 		</section>
 	</div>
 <?php include("php_includes/footer.php"); ?>

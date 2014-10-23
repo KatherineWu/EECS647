@@ -43,4 +43,24 @@ function SHSignUp(button) {
 function screenheight() {
     $("#buyItem").height(screen.height);
     $("#buyTicket").height(screen.height);
+    $("#buyMenuMenu").css("margin-top",screen.height/2.7);
+}
+
+function buyLocation(sess, button) {
+    if (sess == true) {
+	location.href='buyThings.php#buyItem';
+    }
+    else {
+	location.href='index.php#signIn'; 
+    }
+}
+
+function scrolltoSI() {
+    $('html,body').animate({
+	scrollTop: $("#signIn").offset().top
+    }, 1000);
+}
+
+function loadBuyItem() {
+    $("#buyItemBody").load("./php_includes/buyItemInfo.php");
 }
