@@ -17,9 +17,9 @@
 		    $error = true;
 		 }
 		 else {
-		   $findQuery = "SELECT email
-		   	      	 FROM USER
-				 WHERE email='".$loginEmail."'";
+		   $findQuery = "SELECT user_email
+		   	      	 FROM `ROFL.USERS`
+				 WHERE user_email='".$loginEmail."'";
 
 		   $result = mysqli_query($c, $findQuery);
 		   $count = mysqli_num_rows($result);

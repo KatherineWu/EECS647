@@ -46,15 +46,7 @@ function screenheight() {
     $("#buyMenuMenu").css("margin-top",screen.height/2.7);
 }
 
-function buyLocation(sess, button) {
-    if (sess == true) {
-	location.href='buyThings.php#buyItem';
-    }
-    else {
-	location.href='index.php#signIn'; 
-    }
-}
-
-function loadBuyItem() {
-    $("#buyItemBody").load("./php_includes/buyItemInfo.php");
+function showHide(id, thisid) {
+    $(thisid).hide(200);
+    $(id).show(200);
 }

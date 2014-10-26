@@ -19,7 +19,7 @@
 		<section id="itemSpace" class="mainContent">
 			<br><br><br><br><br>
 
-			<div class="img itemImg"><img src="<?php echo $pathToItemPic; ?>"></div>
+			<div class="img itemImg"><img style="max-width:450px" src="<?php echo $pathToItemPic; ?>"></div>
 			<div class="itemDescr">
 			  <h2><?php echo $buyItemResult->item_name; ?></h2>
 			  <?php echo $buyItemResult->item_description; ?><br><br>
@@ -40,7 +40,7 @@
 			   else {
 				echo "href=\"buyThings.php#buyTicket\"";
 			   }
-														?> class="linkButton" id="buyTicketButton">Buy Tickets</a>
+			?> class="linkButton" id="buyTicketButton">Buy Tickets</a>
 		</section>
 	</div>
 	<div id="aboutUsWrapper" class="mainWrapper vertical-slide">
