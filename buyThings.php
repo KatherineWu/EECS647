@@ -319,7 +319,7 @@
 		      <div id="itemConfirmation" class="hiddenDisplay" <?php echo $item4Hidden; ?>>
 			<font size="14">Thank you for your purchase!</font><br>
 			An email has been sent to you about this purchase<br>
-			Page will redirect to homepage in 5 seconds.
+			Page will refresh in 10 seconds.
 		      </div>
 		      </div>
 	     </section>
@@ -628,7 +628,7 @@
 			<div id="ticketConfirmation" class="hiddenDisplay" <?php echo $ticket4Hidden; ?>>
 			  <font size="14">Thank you for your purchase!</font><br>
 			  An email has been sent to you about this purchase<br>
-			  Page will redirect to homepage in 5 seconds.
+			  Page will refresh in 10 seconds.
 			  <br><br>
 			  <?php echo $ticket; ?>
 			</div>

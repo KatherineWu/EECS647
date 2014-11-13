@@ -200,7 +200,7 @@
 	       $item4Hidden = "style=\"display:inline;\"";
 
 	       mail($cuser, "ROFL: Thank You For Your Purchase!", "<html>Hello ".$getUserResult->first_name.",<br><br>Thank you for your purchase of <b>".$buyItemResult->item_name."</b>.<br><br>Total Cost: <b>$".$buyItemResult->item_cost."</b><br><br>Thank you for shopping with us,<br>ROFL Team</html>","From: donotreply@rofl.com\r\nMIME-Version:1.0\r\nContent-type:text/html;charset=UTF-8"); 
-	       header("Refresh:5; url=index.php");    	
+	       header("Refresh:10; url=buyThings.php#buyItem");    	
 	     }
 	  }
 	}
@@ -355,6 +355,8 @@
 	   if (!empty($_POST)) {
 	      $quantity = $_COOKIE['quan'];
 	      
+	      mysqli_query($c, "BEGIN");
+
 	      for ($x = 0; $x < $quantity; $x++) {
 	      	  $submitTicketQuery = "INSERT INTO `ROFL.TICKET`
 		  		       	       (`user_email`,
@@ -366,9 +368,12 @@
 						)";
 		  if (!mysqli_query($c, $submitTicketQuery)) {
 		     echo "Failed to buy ticket for customer.";
+		     mysqli_query($c, "ROLLBACK");
 		     exit;
 		  }
 	       }
+	      
+	       mysqli_query($c, "COMMIT");
 
 	       $ticket1Hidden = "style=\"display:none;\"";
 	       $ticket2Hidden = "style=\"display:none;\"";
@@ -392,7 +397,7 @@
 	       mysqli_free_result($ticketSQL);
 
 	       mail($cuser, "ROFL: Thank You For Your Purchase!", "<html>Hello ".$getUserResult->first_name.",<br><br>Thank you for your purchase of tickets for <b>".$buyItemResult->item_name."</b>.<br><br>Total Cost: <b>$".(float)$buyItemResult->cost_of_ticket*(int)$quantity."</b><br><br>".$ticket."<br><br>Thank you for shopping with us,<br>ROFL Team</html>","From: donotreply@rofl.com\r\nMIME-Version:1.0\r\nContent-type:text/html;charset=UTF-8");     	
-	       header("Refresh:5; url=index.php");
+	       header("Refresh:10; url=buyThings.php#buyTicket");
 	      }
 	  } 
 ?>
