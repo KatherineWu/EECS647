@@ -29,8 +29,23 @@
 			<li>
 				<a href="index.php#itemSpace"> Item </a>
 			</li>
-		</ul>	
+		</ul>
+	<?php 
+		      	      if (isset($_SESSION['user'])) {
+			      	 $selectJobQuery = "SELECT job_title
+				 	      	      FROM `ROFL.ADMIN`
+						      WHERE user_email = '".$_SESSION['user']."'";
+				 $selectJobResult = mysqli_query($c, $selectJobQuery);
+				 $count = mysqli_num_rows($selectJobResult);
+
+				 if ($count > 0) {
+			      	    echo "<a id=\"adminLink\" href=\"admin.php\">Admin</a>";
+				 }
+			
+				 mysqli_free_result($selectJobResult);
+		      	      }
+			?>	
 	</div>
-	
 </div>
+			
  
