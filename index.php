@@ -58,7 +58,17 @@
 		<section id="winningNum" class="mainContent">
 			<br><br><br><br><br>
 			<h1 class="hidden" ><font size="20">Yesterday's Winning Rofl:</font></h1>
-			<h2 class="hidden">1</h2>
+			<h2 class="hidden">
+			  <?php   
+			     $winnerQuery = "SELECT winning_number
+					     FROM `ROFL.ITEM_OF_THE_DAY`
+					     WHERE date_of_raffle=CURDATE()-1";
+			     $winnerSQL = $c->query($winnerQuery);
+			     $winnerResult = $winnerSQL->fetch_object();
+			     mysqli_free_result($winnerSQL);
+			     echo $winnerResult->winning_number;
+			     ?>
+			</h2>
 		</section>
 	</div>
 	<div id="signInWrapper" class="mainWrapper">

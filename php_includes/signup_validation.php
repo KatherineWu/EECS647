@@ -50,7 +50,9 @@
 		 $error = true;
 	      } 
 	      else {
+	      	 $options = [ 'cost' => 12  ];
 	      	 $loginPW = $_POST['signInPassword'];
+		 $loginPW = password_hash($loginPW, PASSWORD_BCRYPT, $options);
 	      }
  
 	      if ($error == false) {

@@ -20,7 +20,7 @@
      <a href="index.php">>>ROFL Main<<</a>
 </div>
 <div id="adminMain" class="mainWrapper">
-  <div id="adminMainContent" class="mainContent">
+  <div id="adminMainContent">
     <?php 
        $selectJobQuery = "SELECT job_title
       			  FROM `ROFL.ADMIN`

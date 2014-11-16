@@ -13,8 +13,22 @@ body {
     overflow-x:hidden;
 }
 
+tr.spaceunder > td {
+    padding-bottom:1em;
+}
+
 .buyContent input[type="text"] {
     font-size:11pt;
+}
+
+#itemQueueWrapper {
+    background:#FFFFFF;
+    box-shadow: inset 0px 0px 15px #333333;
+    border-top: 15px groove #2DC6FF;
+}
+
+textarea {
+    font-size:15pt;
 }
 
 input[type="button"], input[type="submit"] {
@@ -201,12 +215,12 @@ input[type="button"], input[type="submit"] {
 
 #adminMain {
     background:rgba(255,255,255,.5);
-    height:100%;
+    min-height:100%;
     z-index:-1;
 }
 
 #adminMainContent {
-    padding-top:250px;
+    padding-top:200px;
 }
 
 #footerContent {

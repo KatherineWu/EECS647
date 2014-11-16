@@ -6,5 +6,12 @@
      $buyItemSQL = $c->query($buyItemQuery);
      $buyItemResult = $buyItemSQL->fetch_object();
      $pathToItemPic = "img/items/".$buyItemResult->item_picture;
+     
+     $count = mysqli_num_rows ($buyItemSQL);
+     
+     if ($count != 1) {
+     	$buyItemResult->item_name = "There is no item of the day. We made a mistake and we are going to fire some adminstrators. <br>Sorry for your inconvenience.";
+     }
+
      mysqli_free_result($buyItemSQL);
 ?>
