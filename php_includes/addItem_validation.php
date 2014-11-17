@@ -30,7 +30,7 @@
 	      }
 	      
 	      if ($error == false) {
-	      	 mysqli_query($c, "BEGIN");
+	      	 mysqli_query($c, "START TRANSACTION");
 	      	 $insertItemQuery = "INSERT INTO `ROFL.ITEM`
 		 		     ( item_picture,
 				       item_name,

@@ -355,7 +355,7 @@
 	   if (!empty($_POST)) {
 	      $quantity = $_COOKIE['quan'];
 	      
-	      mysqli_query($c, "BEGIN");
+	      mysqli_query($c, "START TRANSACTION");
 
 	      for ($x = 0; $x < $quantity; $x++) {
 	      	  $submitTicketQuery = "INSERT INTO `ROFL.TICKET`
