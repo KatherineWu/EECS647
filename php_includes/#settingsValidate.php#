@@ -10,6 +10,8 @@
 	      else {
 	      }
 */
+	if (isset($_POST['signInSubmit'])) {
+
 	      $loginFname = $_POST['firstName'];
 	      echo "test1\n";
 	      $loginLname = $_POST['lastName'];
@@ -28,5 +30,6 @@
 		mysqli_close($c); 
 		header("location: ../index.php#signIn");					  
 	      }
+
 ?>
 

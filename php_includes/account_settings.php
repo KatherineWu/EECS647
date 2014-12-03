@@ -3,28 +3,14 @@
      <h1><font size="6pt">Account Information</font></h1>
 
 <?php
-
 	include('db_access.php');
-
-if (!empty($_POST)) {
-	      $error = false;
-	      if (empty($_POST['signInEmail'])) {
-	      	 $emailError = "*required";
-		 	 $error = true;
-	      }
-	      else {
-	      	 $loginEmail = $_POST['signInEmail'];
-		 if (!filter_var($loginEmail, FILTER_VALIDATE_EMAIL)) {
-		    $emailError = "*invalid";
-		    $error = true;
-		 }
-		 else {
-
-			// get results from database
-			$result = mysql_query("SELECT * FROM `ROFL.USERS`  WHERE user_email='".$loginEmail."'") 
-				or die(mysql_error());  
-		
-				while ($row = mysql_fetch_array($user_info)) {
+	
+	$loginEmail = $_SESSION['user'];
+		 
+	// get results from database
+	$result = mysqli_query($c, "SELECT * FROM `ROFL.USERS`  WHERE user_email='".$loginEmail."'") 
+				or die(mysqli_error());  
+				while ($row = mysqli_fetch_array($result)) {
 						$first_name = $row['first_name'];
 						$last_name = $row['last_name'];
 						$phone = $row['user_phone'];
@@ -38,14 +24,11 @@ if (!empty($_POST)) {
 						$billingCity = $row['user_billing_address_city'];
 						$billingState = $row['user_billing_address_state'];
 						$billingZip = $row['user_billing_address_zip'];
-						$password = $row['password'];
-					}
-
-			?>
-
-			<form action="settingsValidate.php">
+					}				
+			
+			<form method="post" action="<?php $_PHP_SELF ?>">
 				First name:
-				<input type="text" name="firstName" value="<?php echo $first_name?>">
+				<input type="text" name="firstName" value="<?php echo $first_name;?>">
 				<br>
 				Last name:
 				<input type="text" name="lastName" value="<?php echo $last_name?>">
@@ -66,8 +49,6 @@ if (!empty($_POST)) {
 				Card Information:<br>
 				<input type="password" name="cardNumber" value="<?php echo $cardNumber?>"><br>
 				<input type="password" name="cardExpDate" value="<?php echo $cardExpDate?>"><br>
-				Password:
-				<input type="password" name="password" value="<?php echo $password?>">
 				<div style="display:none;"><input type="text" name="email" value="<?php echo $user_email?>"></div>
 				<br><br>
 				<input type="submit" value="Submit">
