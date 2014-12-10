@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$loginError = "";	
+	$loginError = "";
 
 	if (isset($_POST['signInSubmit'])) {
 	   if (!empty($_POST)) {
